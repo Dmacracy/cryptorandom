@@ -12,7 +12,7 @@ jobs:
     runs-on: Ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.8]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -35,62 +35,4 @@ jobs:
     - name: Test cryptorandom
       run: |
         source ~/venv/bin/activate
-        make test-all
-
-  macos:
-    runs-on: macOS-latest
-    strategy:
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-
-    - name: Before install
-      run: |
-        python3 -m venv ~/venv
-
-    - name: Install packages
-      run: |
-        source ~/venv/bin/activate
-        pip install --upgrade pip wheel setuptools
-        pip install -r requirements.txt
-        pip install .
-        pip list
-
-    - name: Test cryptorandom
-      run: |
-        source ~/venv/bin/activate
-        make test-all
-
-  windows:
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        python-version: [3.7, 3.8, 3.9]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-
-    - name: Before install
-      run: |
-        python -m venv venv
-
-    - name: Install packages
-      run: |
-        venv\Scripts\Activate.ps1
-        python -m pip install --upgrade pip wheel setuptools
-        python -m pip install -r requirements.txt
-        python -m pip install .
-        python -m pip list
-
-    - name: Test cryptorandom
-      run: |
-        venv\Scripts\Activate.ps1
         make test-all
