@@ -48,5 +48,5 @@ terms & conditions for usage, and a DISCLAIMER OF ALL WARRANTIES.
    :target: https://pypi.org/project/cryptorandom/
 .. |Build Status| image:: https://github.com/statlab/cryptorandom/workflows/test/badge.svg?branch=main
    :target: https://github.com/statlab/cryptorandom/actions?query=workflow%3A%22test%22
-.. |Coverage Status| image:: https://codecov.io/gh/statlab/cryptorandom/branch/main/graph/badge.svg
-   :target: https://app.codecov.io/gh/statlab/cryptorandom/branch/main
+.. |Coverage Status| image:: https://codecov.io/gh/Dmacracy/cryptorandom/branch/main/graph/badge.svg
+   :target: https://app.codecov.io/gh/Dmacracy/cryptorandom/branch/main
